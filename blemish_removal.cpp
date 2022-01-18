@@ -97,7 +97,7 @@ Mat findBestPatch(Mat img, int x, int y, int r) {
 	// patchUp
 	if (y - 2 * r >= 0) {
 		Mat patchUp = cropPatch(img, x, y - 2 * r, r);
-		neighborPatches.push_back(patchUp);					// Mat is a matrix header and push_back won't create a deep copy
+		neighborPatches.push_back(patchUp);					
 	}
 	// patchDown
 	if (y + 2 * r < img.size().height) {
