@@ -155,7 +155,7 @@ Mat findBestPatch(Mat img, int x, int y, int r) {
 }
 
 // callback function for removing blemish
-void onRemoveBlemish(int action, int x, int y, int flags, void* userdata) {
+void onClickRemoveBlemish(int action, int x, int y, int flags, void* userdata) {
 	if (action == EVENT_LBUTTONDOWN) {
 		// save the result from previous step to a separate image
 		lastStep = img.clone();
@@ -187,7 +187,7 @@ int main() {
 	imgCopy = img.clone();
 	
 	namedWindow("blemishRemovalResult", WINDOW_NORMAL);
-	setMouseCallback("blemishRemovalResult", onRemoveBlemish);
+	setMouseCallback("blemishRemovalResult", onClickRemoveBlemish);
 
 	int k = 0;
 	while (k != 27) {
